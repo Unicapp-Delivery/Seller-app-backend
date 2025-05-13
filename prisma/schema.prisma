@@ -6,7 +6,6 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
 }
 
 datasource db {
@@ -15,14 +14,14 @@ datasource db {
 }
 
 model Seller {
-  id            String   @id @default(uuid())
-  bussinessName String
+  id              String   @id @default(uuid())
+  bussinessName   String
   instagramHandle String
-  phoneNumber   String @unique
-  bio           String
-  shopDomain        String
-  email         String   @unique
-  password      String
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
+  phoneNumber     String   @unique
+  bio             String
+  shopDomain      String
+  email           String   @unique
+  password        String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
