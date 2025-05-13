@@ -30,6 +30,7 @@
   "dependencies": {
     "@prisma/client": "^6.7.0",
     "@types/authenticator": "^1.1.4",
+    "@types/cookie-parser": "^1.4.8",
     "@types/jsonwebtoken": "^9.0.9",
     "authenticator": "^1.1.5",
     "bcryptjs": "^3.0.2",
