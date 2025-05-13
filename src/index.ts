@@ -8,10 +8,11 @@ app.use(cors({
 }))
 app.use(express.json())
 app.use(cookieParser())
+const port = process.env.PORT || 8000
 app.get("/", (req, res) => {
   res.send("Server Working")
 })
 app.use("/api/auth", authRoute)
-app.listen(8000, () => {
-  console.log(`Server is running on port 8000`)
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`)
 })
