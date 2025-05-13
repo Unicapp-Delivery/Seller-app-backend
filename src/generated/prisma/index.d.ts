@@ -881,11 +881,7 @@ export namespace Prisma {
 
   export type SellerMinAggregateOutputType = {
     id: string | null
-    bussinessName: string | null
-    instagramHandle: string | null
-    phoneNumber: string | null
-    bio: string | null
-    shopDomain: string | null
+    name: string | null
     email: string | null
     password: string | null
     createdAt: Date | null
@@ -894,11 +890,7 @@ export namespace Prisma {
 
   export type SellerMaxAggregateOutputType = {
     id: string | null
-    bussinessName: string | null
-    instagramHandle: string | null
-    phoneNumber: string | null
-    bio: string | null
-    shopDomain: string | null
+    name: string | null
     email: string | null
     password: string | null
     createdAt: Date | null
@@ -907,11 +899,7 @@ export namespace Prisma {
 
   export type SellerCountAggregateOutputType = {
     id: number
-    bussinessName: number
-    instagramHandle: number
-    phoneNumber: number
-    bio: number
-    shopDomain: number
+    name: number
     email: number
     password: number
     createdAt: number
@@ -922,11 +910,7 @@ export namespace Prisma {
 
   export type SellerMinAggregateInputType = {
     id?: true
-    bussinessName?: true
-    instagramHandle?: true
-    phoneNumber?: true
-    bio?: true
-    shopDomain?: true
+    name?: true
     email?: true
     password?: true
     createdAt?: true
@@ -935,11 +919,7 @@ export namespace Prisma {
 
   export type SellerMaxAggregateInputType = {
     id?: true
-    bussinessName?: true
-    instagramHandle?: true
-    phoneNumber?: true
-    bio?: true
-    shopDomain?: true
+    name?: true
     email?: true
     password?: true
     createdAt?: true
@@ -948,11 +928,7 @@ export namespace Prisma {
 
   export type SellerCountAggregateInputType = {
     id?: true
-    bussinessName?: true
-    instagramHandle?: true
-    phoneNumber?: true
-    bio?: true
-    shopDomain?: true
+    name?: true
     email?: true
     password?: true
     createdAt?: true
@@ -1034,11 +1010,7 @@ export namespace Prisma {
 
   export type SellerGroupByOutputType = {
     id: string
-    bussinessName: string
-    instagramHandle: string
-    phoneNumber: string
-    bio: string
-    shopDomain: string
+    name: string
     email: string
     password: string
     createdAt: Date
@@ -1064,11 +1036,7 @@ export namespace Prisma {
 
   export type SellerSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    bussinessName?: boolean
-    instagramHandle?: boolean
-    phoneNumber?: boolean
-    bio?: boolean
-    shopDomain?: boolean
+    name?: boolean
     email?: boolean
     password?: boolean
     createdAt?: boolean
@@ -1077,11 +1045,7 @@ export namespace Prisma {
 
   export type SellerSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    bussinessName?: boolean
-    instagramHandle?: boolean
-    phoneNumber?: boolean
-    bio?: boolean
-    shopDomain?: boolean
+    name?: boolean
     email?: boolean
     password?: boolean
     createdAt?: boolean
@@ -1090,11 +1054,7 @@ export namespace Prisma {
 
   export type SellerSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    bussinessName?: boolean
-    instagramHandle?: boolean
-    phoneNumber?: boolean
-    bio?: boolean
-    shopDomain?: boolean
+    name?: boolean
     email?: boolean
     password?: boolean
     createdAt?: boolean
@@ -1103,29 +1063,21 @@ export namespace Prisma {
 
   export type SellerSelectScalar = {
     id?: boolean
-    bussinessName?: boolean
-    instagramHandle?: boolean
-    phoneNumber?: boolean
-    bio?: boolean
-    shopDomain?: boolean
+    name?: boolean
     email?: boolean
     password?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type SellerOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "bussinessName" | "instagramHandle" | "phoneNumber" | "bio" | "shopDomain" | "email" | "password" | "createdAt" | "updatedAt", ExtArgs["result"]["seller"]>
+  export type SellerOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "password" | "createdAt" | "updatedAt", ExtArgs["result"]["seller"]>
 
   export type $SellerPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Seller"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
-      bussinessName: string
-      instagramHandle: string
-      phoneNumber: string
-      bio: string
-      shopDomain: string
+      name: string
       email: string
       password: string
       createdAt: Date
@@ -1554,11 +1506,7 @@ export namespace Prisma {
    */
   interface SellerFieldRefs {
     readonly id: FieldRef<"Seller", 'String'>
-    readonly bussinessName: FieldRef<"Seller", 'String'>
-    readonly instagramHandle: FieldRef<"Seller", 'String'>
-    readonly phoneNumber: FieldRef<"Seller", 'String'>
-    readonly bio: FieldRef<"Seller", 'String'>
-    readonly shopDomain: FieldRef<"Seller", 'String'>
+    readonly name: FieldRef<"Seller", 'String'>
     readonly email: FieldRef<"Seller", 'String'>
     readonly password: FieldRef<"Seller", 'String'>
     readonly createdAt: FieldRef<"Seller", 'DateTime'>
@@ -1945,11 +1893,7 @@ export namespace Prisma {
 
   export const SellerScalarFieldEnum: {
     id: 'id',
-    bussinessName: 'bussinessName',
-    instagramHandle: 'instagramHandle',
-    phoneNumber: 'phoneNumber',
-    bio: 'bio',
-    shopDomain: 'shopDomain',
+    name: 'name',
     email: 'email',
     password: 'password',
     createdAt: 'createdAt',
@@ -2030,11 +1974,7 @@ export namespace Prisma {
     OR?: SellerWhereInput[]
     NOT?: SellerWhereInput | SellerWhereInput[]
     id?: StringFilter<"Seller"> | string
-    bussinessName?: StringFilter<"Seller"> | string
-    instagramHandle?: StringFilter<"Seller"> | string
-    phoneNumber?: StringFilter<"Seller"> | string
-    bio?: StringFilter<"Seller"> | string
-    shopDomain?: StringFilter<"Seller"> | string
+    name?: StringFilter<"Seller"> | string
     email?: StringFilter<"Seller"> | string
     password?: StringFilter<"Seller"> | string
     createdAt?: DateTimeFilter<"Seller"> | Date | string
@@ -2043,11 +1983,7 @@ export namespace Prisma {
 
   export type SellerOrderByWithRelationInput = {
     id?: SortOrder
-    bussinessName?: SortOrder
-    instagramHandle?: SortOrder
-    phoneNumber?: SortOrder
-    bio?: SortOrder
-    shopDomain?: SortOrder
+    name?: SortOrder
     email?: SortOrder
     password?: SortOrder
     createdAt?: SortOrder
@@ -2056,27 +1992,19 @@ export namespace Prisma {
 
   export type SellerWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    phoneNumber?: string
     email?: string
     AND?: SellerWhereInput | SellerWhereInput[]
     OR?: SellerWhereInput[]
     NOT?: SellerWhereInput | SellerWhereInput[]
-    bussinessName?: StringFilter<"Seller"> | string
-    instagramHandle?: StringFilter<"Seller"> | string
-    bio?: StringFilter<"Seller"> | string
-    shopDomain?: StringFilter<"Seller"> | string
+    name?: StringFilter<"Seller"> | string
     password?: StringFilter<"Seller"> | string
     createdAt?: DateTimeFilter<"Seller"> | Date | string
     updatedAt?: DateTimeFilter<"Seller"> | Date | string
-  }, "id" | "phoneNumber" | "email">
+  }, "id" | "email">
 
   export type SellerOrderByWithAggregationInput = {
     id?: SortOrder
-    bussinessName?: SortOrder
-    instagramHandle?: SortOrder
-    phoneNumber?: SortOrder
-    bio?: SortOrder
-    shopDomain?: SortOrder
+    name?: SortOrder
     email?: SortOrder
     password?: SortOrder
     createdAt?: SortOrder
@@ -2091,11 +2019,7 @@ export namespace Prisma {
     OR?: SellerScalarWhereWithAggregatesInput[]
     NOT?: SellerScalarWhereWithAggregatesInput | SellerScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Seller"> | string
-    bussinessName?: StringWithAggregatesFilter<"Seller"> | string
-    instagramHandle?: StringWithAggregatesFilter<"Seller"> | string
-    phoneNumber?: StringWithAggregatesFilter<"Seller"> | string
-    bio?: StringWithAggregatesFilter<"Seller"> | string
-    shopDomain?: StringWithAggregatesFilter<"Seller"> | string
+    name?: StringWithAggregatesFilter<"Seller"> | string
     email?: StringWithAggregatesFilter<"Seller"> | string
     password?: StringWithAggregatesFilter<"Seller"> | string
     createdAt?: DateTimeWithAggregatesFilter<"Seller"> | Date | string
@@ -2104,11 +2028,7 @@ export namespace Prisma {
 
   export type SellerCreateInput = {
     id?: string
-    bussinessName: string
-    instagramHandle: string
-    phoneNumber: string
-    bio: string
-    shopDomain: string
+    name: string
     email: string
     password: string
     createdAt?: Date | string
@@ -2117,11 +2037,7 @@ export namespace Prisma {
 
   export type SellerUncheckedCreateInput = {
     id?: string
-    bussinessName: string
-    instagramHandle: string
-    phoneNumber: string
-    bio: string
-    shopDomain: string
+    name: string
     email: string
     password: string
     createdAt?: Date | string
@@ -2130,11 +2046,7 @@ export namespace Prisma {
 
   export type SellerUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    bussinessName?: StringFieldUpdateOperationsInput | string
-    instagramHandle?: StringFieldUpdateOperationsInput | string
-    phoneNumber?: StringFieldUpdateOperationsInput | string
-    bio?: StringFieldUpdateOperationsInput | string
-    shopDomain?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -2143,11 +2055,7 @@ export namespace Prisma {
 
   export type SellerUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    bussinessName?: StringFieldUpdateOperationsInput | string
-    instagramHandle?: StringFieldUpdateOperationsInput | string
-    phoneNumber?: StringFieldUpdateOperationsInput | string
-    bio?: StringFieldUpdateOperationsInput | string
-    shopDomain?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -2156,11 +2064,7 @@ export namespace Prisma {
 
   export type SellerCreateManyInput = {
     id?: string
-    bussinessName: string
-    instagramHandle: string
-    phoneNumber: string
-    bio: string
-    shopDomain: string
+    name: string
     email: string
     password: string
     createdAt?: Date | string
@@ -2169,11 +2073,7 @@ export namespace Prisma {
 
   export type SellerUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
-    bussinessName?: StringFieldUpdateOperationsInput | string
-    instagramHandle?: StringFieldUpdateOperationsInput | string
-    phoneNumber?: StringFieldUpdateOperationsInput | string
-    bio?: StringFieldUpdateOperationsInput | string
-    shopDomain?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -2182,11 +2082,7 @@ export namespace Prisma {
 
   export type SellerUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
-    bussinessName?: StringFieldUpdateOperationsInput | string
-    instagramHandle?: StringFieldUpdateOperationsInput | string
-    phoneNumber?: StringFieldUpdateOperationsInput | string
-    bio?: StringFieldUpdateOperationsInput | string
-    shopDomain?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -2221,11 +2117,7 @@ export namespace Prisma {
 
   export type SellerCountOrderByAggregateInput = {
     id?: SortOrder
-    bussinessName?: SortOrder
-    instagramHandle?: SortOrder
-    phoneNumber?: SortOrder
-    bio?: SortOrder
-    shopDomain?: SortOrder
+    name?: SortOrder
     email?: SortOrder
     password?: SortOrder
     createdAt?: SortOrder
@@ -2234,11 +2126,7 @@ export namespace Prisma {
 
   export type SellerMaxOrderByAggregateInput = {
     id?: SortOrder
-    bussinessName?: SortOrder
-    instagramHandle?: SortOrder
-    phoneNumber?: SortOrder
-    bio?: SortOrder
-    shopDomain?: SortOrder
+    name?: SortOrder
     email?: SortOrder
     password?: SortOrder
     createdAt?: SortOrder
@@ -2247,11 +2135,7 @@ export namespace Prisma {
 
   export type SellerMinOrderByAggregateInput = {
     id?: SortOrder
-    bussinessName?: SortOrder
-    instagramHandle?: SortOrder
-    phoneNumber?: SortOrder
-    bio?: SortOrder
-    shopDomain?: SortOrder
+    name?: SortOrder
     email?: SortOrder
     password?: SortOrder
     createdAt?: SortOrder

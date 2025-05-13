@@ -1,21 +1,14 @@
 import express from 'express';
-import cookieParser from 'cookie-parser';
-import dotenv from 'dotenv';
 import cors from 'cors';
-import authRoute from './routes/authRoute';
-dotenv.config()
+import dotenv from 'dotenv';
+dotenv.config();
 const app = express();
-app.use(express.json())
-app.use(cookieParser())
-app.use(cors({
-  origin: ["http://localhost:3000", "https://vibetrails.vercel.app"],
-  credentials: true
-}))
+app.use(express.json());
+app.use(cors());
+const PORT = process.env.PORT || 3000;
 app.get("/", (req, res) => {
-  res.send("Hello World")
+  res.send("Server listening")
 })
-app.use('/api/auth', authRoute)
-app.listen(process.env.PORT, () => {
-  console.log(`Server is running on port ${process.env.PORT}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 })
-export default app;
