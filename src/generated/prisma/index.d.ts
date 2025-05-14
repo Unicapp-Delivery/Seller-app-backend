@@ -881,27 +881,36 @@ export namespace Prisma {
 
   export type SellerMinAggregateOutputType = {
     id: string | null
-    name: string | null
+    bussinessName: string | null
+    phoneNumber: string | null
     email: string | null
-    password: string | null
+    subDomain: string | null
+    bio: string | null
+    instagramHandle: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
 
   export type SellerMaxAggregateOutputType = {
     id: string | null
-    name: string | null
+    bussinessName: string | null
+    phoneNumber: string | null
     email: string | null
-    password: string | null
+    subDomain: string | null
+    bio: string | null
+    instagramHandle: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
 
   export type SellerCountAggregateOutputType = {
     id: number
-    name: number
+    bussinessName: number
+    phoneNumber: number
     email: number
-    password: number
+    subDomain: number
+    bio: number
+    instagramHandle: number
     createdAt: number
     updatedAt: number
     _all: number
@@ -910,27 +919,36 @@ export namespace Prisma {
 
   export type SellerMinAggregateInputType = {
     id?: true
-    name?: true
+    bussinessName?: true
+    phoneNumber?: true
     email?: true
-    password?: true
+    subDomain?: true
+    bio?: true
+    instagramHandle?: true
     createdAt?: true
     updatedAt?: true
   }
 
   export type SellerMaxAggregateInputType = {
     id?: true
-    name?: true
+    bussinessName?: true
+    phoneNumber?: true
     email?: true
-    password?: true
+    subDomain?: true
+    bio?: true
+    instagramHandle?: true
     createdAt?: true
     updatedAt?: true
   }
 
   export type SellerCountAggregateInputType = {
     id?: true
-    name?: true
+    bussinessName?: true
+    phoneNumber?: true
     email?: true
-    password?: true
+    subDomain?: true
+    bio?: true
+    instagramHandle?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -1010,9 +1028,12 @@ export namespace Prisma {
 
   export type SellerGroupByOutputType = {
     id: string
-    name: string
-    email: string
-    password: string
+    bussinessName: string | null
+    phoneNumber: string
+    email: string | null
+    subDomain: string | null
+    bio: string | null
+    instagramHandle: string | null
     createdAt: Date
     updatedAt: Date
     _count: SellerCountAggregateOutputType | null
@@ -1036,50 +1057,65 @@ export namespace Prisma {
 
   export type SellerSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
+    bussinessName?: boolean
+    phoneNumber?: boolean
     email?: boolean
-    password?: boolean
+    subDomain?: boolean
+    bio?: boolean
+    instagramHandle?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["seller"]>
 
   export type SellerSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
+    bussinessName?: boolean
+    phoneNumber?: boolean
     email?: boolean
-    password?: boolean
+    subDomain?: boolean
+    bio?: boolean
+    instagramHandle?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["seller"]>
 
   export type SellerSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
+    bussinessName?: boolean
+    phoneNumber?: boolean
     email?: boolean
-    password?: boolean
+    subDomain?: boolean
+    bio?: boolean
+    instagramHandle?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["seller"]>
 
   export type SellerSelectScalar = {
     id?: boolean
-    name?: boolean
+    bussinessName?: boolean
+    phoneNumber?: boolean
     email?: boolean
-    password?: boolean
+    subDomain?: boolean
+    bio?: boolean
+    instagramHandle?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type SellerOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "password" | "createdAt" | "updatedAt", ExtArgs["result"]["seller"]>
+  export type SellerOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "bussinessName" | "phoneNumber" | "email" | "subDomain" | "bio" | "instagramHandle" | "createdAt" | "updatedAt", ExtArgs["result"]["seller"]>
 
   export type $SellerPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Seller"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
-      name: string
-      email: string
-      password: string
+      bussinessName: string | null
+      phoneNumber: string
+      email: string | null
+      subDomain: string | null
+      bio: string | null
+      instagramHandle: string | null
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["seller"]>
@@ -1506,9 +1542,12 @@ export namespace Prisma {
    */
   interface SellerFieldRefs {
     readonly id: FieldRef<"Seller", 'String'>
-    readonly name: FieldRef<"Seller", 'String'>
+    readonly bussinessName: FieldRef<"Seller", 'String'>
+    readonly phoneNumber: FieldRef<"Seller", 'String'>
     readonly email: FieldRef<"Seller", 'String'>
-    readonly password: FieldRef<"Seller", 'String'>
+    readonly subDomain: FieldRef<"Seller", 'String'>
+    readonly bio: FieldRef<"Seller", 'String'>
+    readonly instagramHandle: FieldRef<"Seller", 'String'>
     readonly createdAt: FieldRef<"Seller", 'DateTime'>
     readonly updatedAt: FieldRef<"Seller", 'DateTime'>
   }
@@ -1893,9 +1932,12 @@ export namespace Prisma {
 
   export const SellerScalarFieldEnum: {
     id: 'id',
-    name: 'name',
+    bussinessName: 'bussinessName',
+    phoneNumber: 'phoneNumber',
     email: 'email',
-    password: 'password',
+    subDomain: 'subDomain',
+    bio: 'bio',
+    instagramHandle: 'instagramHandle',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
@@ -1917,6 +1959,14 @@ export namespace Prisma {
   };
 
   export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
+  export const NullsOrder: {
+    first: 'first',
+    last: 'last'
+  };
+
+  export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
   /**
@@ -1974,39 +2024,51 @@ export namespace Prisma {
     OR?: SellerWhereInput[]
     NOT?: SellerWhereInput | SellerWhereInput[]
     id?: StringFilter<"Seller"> | string
-    name?: StringFilter<"Seller"> | string
-    email?: StringFilter<"Seller"> | string
-    password?: StringFilter<"Seller"> | string
+    bussinessName?: StringNullableFilter<"Seller"> | string | null
+    phoneNumber?: StringFilter<"Seller"> | string
+    email?: StringNullableFilter<"Seller"> | string | null
+    subDomain?: StringNullableFilter<"Seller"> | string | null
+    bio?: StringNullableFilter<"Seller"> | string | null
+    instagramHandle?: StringNullableFilter<"Seller"> | string | null
     createdAt?: DateTimeFilter<"Seller"> | Date | string
     updatedAt?: DateTimeFilter<"Seller"> | Date | string
   }
 
   export type SellerOrderByWithRelationInput = {
     id?: SortOrder
-    name?: SortOrder
-    email?: SortOrder
-    password?: SortOrder
+    bussinessName?: SortOrderInput | SortOrder
+    phoneNumber?: SortOrder
+    email?: SortOrderInput | SortOrder
+    subDomain?: SortOrderInput | SortOrder
+    bio?: SortOrderInput | SortOrder
+    instagramHandle?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
   export type SellerWhereUniqueInput = Prisma.AtLeast<{
     id?: string
+    phoneNumber?: string
     email?: string
+    subDomain?: string
+    instagramHandle?: string
     AND?: SellerWhereInput | SellerWhereInput[]
     OR?: SellerWhereInput[]
     NOT?: SellerWhereInput | SellerWhereInput[]
-    name?: StringFilter<"Seller"> | string
-    password?: StringFilter<"Seller"> | string
+    bussinessName?: StringNullableFilter<"Seller"> | string | null
+    bio?: StringNullableFilter<"Seller"> | string | null
     createdAt?: DateTimeFilter<"Seller"> | Date | string
     updatedAt?: DateTimeFilter<"Seller"> | Date | string
-  }, "id" | "email">
+  }, "id" | "phoneNumber" | "email" | "subDomain" | "instagramHandle">
 
   export type SellerOrderByWithAggregationInput = {
     id?: SortOrder
-    name?: SortOrder
-    email?: SortOrder
-    password?: SortOrder
+    bussinessName?: SortOrderInput | SortOrder
+    phoneNumber?: SortOrder
+    email?: SortOrderInput | SortOrder
+    subDomain?: SortOrderInput | SortOrder
+    bio?: SortOrderInput | SortOrder
+    instagramHandle?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: SellerCountOrderByAggregateInput
@@ -2019,72 +2081,96 @@ export namespace Prisma {
     OR?: SellerScalarWhereWithAggregatesInput[]
     NOT?: SellerScalarWhereWithAggregatesInput | SellerScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Seller"> | string
-    name?: StringWithAggregatesFilter<"Seller"> | string
-    email?: StringWithAggregatesFilter<"Seller"> | string
-    password?: StringWithAggregatesFilter<"Seller"> | string
+    bussinessName?: StringNullableWithAggregatesFilter<"Seller"> | string | null
+    phoneNumber?: StringWithAggregatesFilter<"Seller"> | string
+    email?: StringNullableWithAggregatesFilter<"Seller"> | string | null
+    subDomain?: StringNullableWithAggregatesFilter<"Seller"> | string | null
+    bio?: StringNullableWithAggregatesFilter<"Seller"> | string | null
+    instagramHandle?: StringNullableWithAggregatesFilter<"Seller"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"Seller"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Seller"> | Date | string
   }
 
   export type SellerCreateInput = {
     id?: string
-    name: string
-    email: string
-    password: string
+    bussinessName?: string | null
+    phoneNumber: string
+    email?: string | null
+    subDomain?: string | null
+    bio?: string | null
+    instagramHandle?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
   export type SellerUncheckedCreateInput = {
     id?: string
-    name: string
-    email: string
-    password: string
+    bussinessName?: string | null
+    phoneNumber: string
+    email?: string | null
+    subDomain?: string | null
+    bio?: string | null
+    instagramHandle?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
   export type SellerUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
+    bussinessName?: NullableStringFieldUpdateOperationsInput | string | null
+    phoneNumber?: StringFieldUpdateOperationsInput | string
+    email?: NullableStringFieldUpdateOperationsInput | string | null
+    subDomain?: NullableStringFieldUpdateOperationsInput | string | null
+    bio?: NullableStringFieldUpdateOperationsInput | string | null
+    instagramHandle?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SellerUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
+    bussinessName?: NullableStringFieldUpdateOperationsInput | string | null
+    phoneNumber?: StringFieldUpdateOperationsInput | string
+    email?: NullableStringFieldUpdateOperationsInput | string | null
+    subDomain?: NullableStringFieldUpdateOperationsInput | string | null
+    bio?: NullableStringFieldUpdateOperationsInput | string | null
+    instagramHandle?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SellerCreateManyInput = {
     id?: string
-    name: string
-    email: string
-    password: string
+    bussinessName?: string | null
+    phoneNumber: string
+    email?: string | null
+    subDomain?: string | null
+    bio?: string | null
+    instagramHandle?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
   export type SellerUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
+    bussinessName?: NullableStringFieldUpdateOperationsInput | string | null
+    phoneNumber?: StringFieldUpdateOperationsInput | string
+    email?: NullableStringFieldUpdateOperationsInput | string | null
+    subDomain?: NullableStringFieldUpdateOperationsInput | string | null
+    bio?: NullableStringFieldUpdateOperationsInput | string | null
+    instagramHandle?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SellerUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
+    bussinessName?: NullableStringFieldUpdateOperationsInput | string | null
+    phoneNumber?: StringFieldUpdateOperationsInput | string
+    email?: NullableStringFieldUpdateOperationsInput | string | null
+    subDomain?: NullableStringFieldUpdateOperationsInput | string | null
+    bio?: NullableStringFieldUpdateOperationsInput | string | null
+    instagramHandle?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -2104,6 +2190,21 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
+  export type StringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
   export type DateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -2115,29 +2216,43 @@ export namespace Prisma {
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
+  }
+
   export type SellerCountOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
+    bussinessName?: SortOrder
+    phoneNumber?: SortOrder
     email?: SortOrder
-    password?: SortOrder
+    subDomain?: SortOrder
+    bio?: SortOrder
+    instagramHandle?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
   export type SellerMaxOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
+    bussinessName?: SortOrder
+    phoneNumber?: SortOrder
     email?: SortOrder
-    password?: SortOrder
+    subDomain?: SortOrder
+    bio?: SortOrder
+    instagramHandle?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
   export type SellerMinOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
+    bussinessName?: SortOrder
+    phoneNumber?: SortOrder
     email?: SortOrder
-    password?: SortOrder
+    subDomain?: SortOrder
+    bio?: SortOrder
+    instagramHandle?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -2160,6 +2275,24 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
+  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
   export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -2178,6 +2311,10 @@ export namespace Prisma {
     set?: string
   }
 
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
+  }
+
   export type DateTimeFieldUpdateOperationsInput = {
     set?: Date | string
   }
@@ -2194,6 +2331,20 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     not?: NestedStringFilter<$PrismaModel> | string
+  }
+
+  export type NestedStringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
   export type NestedDateTimeFilter<$PrismaModel = never> = {
@@ -2233,6 +2384,34 @@ export namespace Prisma {
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntFilter<$PrismaModel> | number
+  }
+
+  export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {

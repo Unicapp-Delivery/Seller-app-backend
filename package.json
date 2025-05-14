@@ -18,10 +18,15 @@
   "type": "commonjs",
   "dependencies": {
     "@prisma/client": "^6.7.0",
+    "@types/cookie-parser": "^1.4.8",
     "@types/cors": "^2.8.18",
     "@types/dotenv": "^6.1.1",
     "@types/express": "^5.0.1",
+    "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "^22.15.17",
+    "@types/twilio": "^3.19.2",
+    "authenticator": "^1.1.5",
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "dotenv": "^16.5.0",
@@ -29,6 +34,10 @@
     "nodemon": "^3.1.10",
     "prisma": "^6.7.0",
     "ts-node": "^10.9.2",
+    "twilio": "^5.6.1",
     "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@types/authenticator": "^1.1.4"
   }
 }

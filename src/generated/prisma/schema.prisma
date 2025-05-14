@@ -15,10 +15,13 @@ datasource db {
 }
 
 model Seller {
-  id        String   @id @default(cuid())
-  name      String
-  email     String   @unique
-  password  String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id              String   @id @default(cuid())
+  bussinessName   String?
+  phoneNumber     String   @unique
+  email           String?  @unique
+  subDomain       String?  @unique
+  bio             String?
+  instagramHandle String?  @unique
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }

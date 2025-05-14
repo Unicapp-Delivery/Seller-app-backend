@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "Seller" ALTER COLUMN "email" DROP NOT NULL,
+ALTER COLUMN "bussinessName" DROP NOT NULL,
+ALTER COLUMN "subDomain" DROP NOT NULL;
