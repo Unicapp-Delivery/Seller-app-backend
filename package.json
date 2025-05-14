@@ -7,7 +7,7 @@
     "dev": "cross-env NODE_ENV=development npx nodemon src/index.ts",
     "pro": "cross-env NODE_ENV=production npx nodemon src/index.ts",
     "build": "tsc && npx prisma generate",
-    "postinstall": "prisma generate",
+    "postinstall": "prisma generate"
   },
   "repository": {
     "type": "git",
