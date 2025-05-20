@@ -15,13 +15,68 @@ datasource db {
 }
 
 model Seller {
-  id              String   @id @default(cuid())
+  id              String           @id @default(cuid())
   bussinessName   String?
-  phoneNumber     String   @unique
-  email           String?  @unique
-  subDomain       String?  @unique
+  phoneNumber     String           @unique
+  email           String?          @unique
+  subDomain       String?          @unique
   bio             String?
-  instagramHandle String?  @unique
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
+  instagramHandle String?          @unique
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  sellerLocation  SellerLocation[]
+  paymentOptions  PaymentOptions?
+
+}
+
+model SellerLocation {
+  id       String  @id @default(cuid())
+  seller   Seller  @relation(fields: [sellerId], references: [id])
+  sellerId String
+  floor    String?
+  buildingName String?
+  Landmark String?
+  address  String?
+  latitude Float?
+  longitude Float?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+model PaymentOptions {
+  id      String  @id @default(cuid())
+  seller   Seller  @relation(fields: [sellerId], references: [id])
+  sellerId String @unique
+  paymentType PaymentType
+  upiId String?
+  accountHolderName String?
+  accountNumber String?
+  ifscCode String?
+  bankName String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+enum PaymentType {
+  UPI
+  BANK
+}
+model Product {
+  id String @id @default(cuid())
+  image Image[]
+  productName String
+  price Float
+  quantity Int
+  description String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+
+}
+model Image {
+  id String @id @default(cuid())
+  url String
+  product Product @relation(fields: [productId], references: [id])
+  productId String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

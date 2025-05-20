@@ -132,6 +132,50 @@ exports.Prisma.SellerScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.SellerLocationScalarFieldEnum = {
+  id: 'id',
+  sellerId: 'sellerId',
+  floor: 'floor',
+  buildingName: 'buildingName',
+  Landmark: 'Landmark',
+  address: 'address',
+  latitude: 'latitude',
+  longitude: 'longitude',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.PaymentOptionsScalarFieldEnum = {
+  id: 'id',
+  sellerId: 'sellerId',
+  paymentType: 'paymentType',
+  upiId: 'upiId',
+  accountHolderName: 'accountHolderName',
+  accountNumber: 'accountNumber',
+  ifscCode: 'ifscCode',
+  bankName: 'bankName',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.ProductScalarFieldEnum = {
+  id: 'id',
+  productName: 'productName',
+  price: 'price',
+  quantity: 'quantity',
+  description: 'description',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.ImageScalarFieldEnum = {
+  id: 'id',
+  url: 'url',
+  productId: 'productId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -146,10 +190,17 @@ exports.Prisma.NullsOrder = {
   first: 'first',
   last: 'last'
 };
-
+exports.PaymentType = exports.$Enums.PaymentType = {
+  UPI: 'UPI',
+  BANK: 'BANK'
+};
 
 exports.Prisma.ModelName = {
-  Seller: 'Seller'
+  Seller: 'Seller',
+  SellerLocation: 'SellerLocation',
+  PaymentOptions: 'PaymentOptions',
+  Product: 'Product',
+  Image: 'Image'
 };
 
 /**

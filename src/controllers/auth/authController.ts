@@ -5,7 +5,13 @@ import { createMessage } from "../../utils/twilio";
 import { Request, Response } from "express";
 import { prisma } from "../../config/db";
 import jwt from "jsonwebtoken";
+
 import { JWT_SECRET, SECRET_KEY } from "../../config/config";
+declare module "express-serve-static-core" {
+  interface Request {
+    id: string;
+  }
+}
 export const signup = async (req: Request, res: Response) => {
   const phoneNumber = req.body.phoneNumber as string;
   const totp = generateToken(phoneNumber + SECRET_KEY);
@@ -104,6 +110,26 @@ export const register = async (req: Request, res: Response) => {
         subDomain: body.subDomain,
         bio: body.bio,
         instagramHandle: body.instagramHandle,
+        sellerLocation: {
+          create: {
+            floor: body.floor,
+            buildingName: body.buildingName,
+            Landmark: body.landmark,
+            latitude: body.latitude,
+            longitude: body.longitude,
+            address: body.address,
+          }
+        },
+        paymentOptions: {
+          create: {
+            paymentType: body.paymentType,
+            upiId: body.paymentType === 'UPI' ? body.upiId : null,
+            bankName: body.paymentType === 'BANK' ? body.bankName : null,
+            accountNumber: body.paymentType === 'BANK' ? body.accountNumber : null,
+            ifscCode: body.paymentType === 'BANK' ? body.ifscCode : null,
+            accountHolderName: body.paymentType === 'BANK' ? body.accountHolderName : null,
+          },
+        },
       }
     })
     res.json({
@@ -116,6 +142,4 @@ export const register = async (req: Request, res: Response) => {
     res.status(500).json({ message: "Internal server error" });
     return;
   }
-
-
 }
