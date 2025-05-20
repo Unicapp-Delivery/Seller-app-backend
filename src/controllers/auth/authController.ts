@@ -123,11 +123,15 @@ export const register = async (req: Request, res: Response) => {
         paymentOptions: {
           create: {
             paymentType: body.paymentType,
-            upiId: body.paymentType === 'UPI' ? body.upiId : null,
-            bankName: body.paymentType === 'BANK' ? body.bankName : null,
-            accountNumber: body.paymentType === 'BANK' ? body.accountNumber : null,
-            ifscCode: body.paymentType === 'BANK' ? body.ifscCode : null,
-            accountHolderName: body.paymentType === 'BANK' ? body.accountHolderName : null,
+            ...(body.paymentType === 'UPI' && {
+              upiId: body.upiId,
+            }),
+            ...(body.paymentType === 'BANK' && {
+              bankName: body.bankName,
+              accountNumber: body.accountNumber,
+              ifscCode: body.ifscCode,
+              accountHolderName: body.accountHolderName,
+            }),
           },
         },
       }
