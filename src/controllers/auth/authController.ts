@@ -94,7 +94,7 @@ export const verifyOtp = async (req: Request, res: Response) => {
 
 export const register = async (req: Request, res: Response) => {
   const userId = req.id
-  const body = req.body
+  const { bussinessName, email, subDomain, bio, instagramHandle, sellerLocation, paymentOptions } = req.body
   if (!userId) {
     res.status(401).json({ message: "Unauthorized" });
     return;
@@ -109,32 +109,32 @@ export const register = async (req: Request, res: Response) => {
         id: userId
       },
       data: {
-        bussinessName: body.bussinessName,
-        email: body.email,
-        subDomain: body.subDomain,
-        bio: body.bio,
-        instagramHandle: body.instagramHandle,
+        bussinessName: bussinessName,
+        email: email,
+        subDomain: subDomain,
+        bio: bio,
+        instagramHandle: instagramHandle,
         sellerLocation: {
           create: {
-            floor: body.floor,
-            buildingName: body.buildingName,
-            Landmark: body.landmark,
-            latitude: body.latitude,
-            longitude: body.longitude,
-            address: body.address,
+            floor: sellerLocation.floor,
+            buildingName: sellerLocation.buildingName,
+            Landmark: sellerLocation.landmark,
+            latitude: sellerLocation.latitude,
+            longitude: sellerLocation.longitude,
+            address: sellerLocation.address,
           }
         },
         paymentOptions: {
           create: {
-            paymentType: body.paymentType,
-            ...(body.paymentType === 'UPI' && {
-              upiId: body.upiId,
+            paymentType: paymentOptions.paymentType,
+            ...(paymentOptions.paymentType === 'UPI' && {
+              upiId: paymentOptions.upiId,
             }),
-            ...(body.paymentType === 'BANK' && {
-              bankName: body.bankName,
-              accountNumber: body.accountNumber,
-              ifscCode: body.ifscCode,
-              accountHolderName: body.accountHolderName,
+            ...(paymentOptions.paymentType === 'BANK' && {
+              bankName: paymentOptions.bankName,
+              accountNumber: paymentOptions.accountNumber,
+              ifscCode: paymentOptions.ifscCode,
+              accountHolderName: paymentOptions.accountHolderName,
             }),
           },
         },
