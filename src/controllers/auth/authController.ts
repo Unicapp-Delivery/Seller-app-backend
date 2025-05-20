@@ -101,7 +101,8 @@ export const register = async (req: Request, res: Response) => {
   }
   try {
 
-    if (!body.paymentType || !['UPI', 'BANK'].includes(body.paymentType)) {
+    if (!paymentOptions.paymentType || !['UPI', 'BANK'].includes(paymentOptions.paymentType)) {
+
       return res.status(400).json({ message: "Invalid or missing paymentType" });
     }
     const user = await prisma.seller.update({
