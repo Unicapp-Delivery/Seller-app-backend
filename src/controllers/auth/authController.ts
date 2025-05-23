@@ -143,6 +143,7 @@ export const register = async (req: Request, res: Response) => {
               }),
             },
             update: {
+              paymentType: paymentOptions.paymentType,
               ...(paymentOptions.paymentType === 'UPI' && {
                 upiId: paymentOptions.upiId,
               }),
