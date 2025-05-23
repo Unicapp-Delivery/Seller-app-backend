@@ -91,7 +91,6 @@ export const verifyOtp = async (req: Request, res: Response) => {
   }
 
 }
-
 export const register = async (req: Request, res: Response) => {
   const userId = req.id
   const { bussinessName, email, subDomain, bio, instagramHandle, sellerLocation, paymentOptions } = req.body
@@ -103,7 +102,8 @@ export const register = async (req: Request, res: Response) => {
 
     if (!paymentOptions.paymentType || !['UPI', 'BANK'].includes(paymentOptions.paymentType)) {
 
-      return res.status(400).json({ message: "Invalid or missing paymentType" });
+      res.status(400).json({ message: "Invalid or missing paymentType" });
+      return;
     }
     const user = await prisma.seller.update({
       where: {
@@ -126,18 +126,35 @@ export const register = async (req: Request, res: Response) => {
           }
         },
         paymentOptions: {
-          create: {
-            paymentType: paymentOptions.paymentType,
-            ...(paymentOptions.paymentType === 'UPI' && {
-              upiId: paymentOptions.upiId,
-            }),
-            ...(paymentOptions.paymentType === 'BANK' && {
-              bankName: paymentOptions.bankName,
-              accountNumber: paymentOptions.accountNumber,
-              ifscCode: paymentOptions.ifscCode,
-              accountHolderName: paymentOptions.accountHolderName,
-            }),
-          },
+          upsert: {
+            where: {
+              sellerId: userId
+            },
+            create: {
+              paymentType: paymentOptions.paymentType,
+              ...(paymentOptions.paymentType === 'UPI' && {
+                upiId: paymentOptions.upiId,
+              }),
+              ...(paymentOptions.paymentType === 'BANK' && {
+                bankName: paymentOptions.bankName,
+                accountNumber: paymentOptions.accountNumber,
+                ifscCode: paymentOptions.ifscCode,
+                accountHolderName: paymentOptions.accountHolderName,
+              }),
+            },
+            update: {
+              ...(paymentOptions.paymentType === 'UPI' && {
+                upiId: paymentOptions.upiId,
+              }),
+              ...(paymentOptions.paymentType === 'BANK' && {
+                bankName: paymentOptions.bankName,
+                accountNumber: paymentOptions.accountNumber,
+                ifscCode: paymentOptions.ifscCode,
+                accountHolderName: paymentOptions.accountHolderName,
+              }),
+            }
+          }
+
         },
       }
     })

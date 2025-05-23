@@ -24,58 +24,63 @@ model Seller {
   instagramHandle String?          @unique
   createdAt       DateTime         @default(now())
   updatedAt       DateTime         @updatedAt
+  products        Product[]
   sellerLocation  SellerLocation[]
   paymentOptions  PaymentOptions?
-
 }
 
 model SellerLocation {
-  id       String  @id @default(cuid())
-  seller   Seller  @relation(fields: [sellerId], references: [id])
-  sellerId String
-  floor    String?
+  id           String  @id @default(cuid())
+  seller       Seller  @relation(fields: [sellerId], references: [id])
+  sellerId     String
+  floor        String?
   buildingName String?
-  Landmark String?
-  address  String?
-  latitude Float?
-  longitude Float?
+  Landmark     String?
+  address      String?
+  latitude     Float?
+  longitude    Float?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
 model PaymentOptions {
-  id      String  @id @default(cuid())
-  seller   Seller  @relation(fields: [sellerId], references: [id])
-  sellerId String @unique
-  paymentType PaymentType
-  upiId String?
+  id                String      @id @default(cuid())
+  seller            Seller      @relation(fields: [sellerId], references: [id])
+  sellerId          String      @unique
+  paymentType       PaymentType
+  upiId             String?
   accountHolderName String?
-  accountNumber String?
-  ifscCode String?
-  bankName String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  accountNumber     String?
+  ifscCode          String?
+  bankName          String?
+  createdAt         DateTime    @default(now())
+  updatedAt         DateTime    @updatedAt
 }
+
 enum PaymentType {
   UPI
   BANK
 }
+
 model Product {
-  id String @id @default(cuid())
-  image Image[]
+  id          String   @id @default(cuid())
+  image       Image[]
   productName String
-  price Float
-  quantity Int
+  price       Float
+  quantity    Int
   description String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 
-
+  Seller   Seller? @relation(fields: [sellerId], references: [id])
+  sellerId String?
 }
+
 model Image {
-  id String @id @default(cuid())
-  url String
-  product Product @relation(fields: [productId], references: [id])
+  id        String   @id @default(cuid())
+  url       String
+  product   Product  @relation(fields: [productId], references: [id])
   productId String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

@@ -24,6 +24,7 @@ model Seller {
   instagramHandle String?          @unique
   createdAt       DateTime         @default(now())
   updatedAt       DateTime         @updatedAt
+  products        Product[]
   sellerLocation  SellerLocation[]
   paymentOptions  PaymentOptions?
 }
@@ -71,6 +72,9 @@ model Product {
   description String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+
+  Seller   Seller? @relation(fields: [sellerId], references: [id])
+  sellerId String?
 }
 
 model Image {
